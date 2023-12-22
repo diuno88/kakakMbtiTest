@@ -1,38 +1,181 @@
-.App {
-  text-align: center;
+.mbtilayout{
+  width: 100vw;
+  font-size : 14px;
+  display: flex;
+  justify-content: center; /*가운데정렬 */
+  background-color: #eee;
+  height : calc(var(--vh,1vh)*100);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.startPageLayout{
+  display: flex;
+  flex-direction: column; /*위에서 아래로 쌓기 위해서 */
+  align-items: center;
+  justify-content: center; /*가운데정렬 */
+  background-color: #ffea35;
+  width: 100%; /*카톡느낌이 나도록 100%로 채우게 하는데 최대너비를 지정함*/
+  max-width: 900px;
+  height: 100%;
+  color: #413730;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.startLogo{
+  display: flex;
+  flex-direction: column; /*위에서 아래로 쌓기 위해서 */
+  align-items: center;
+  font-size: 25px;
+  font-weight: 700;
+}
+.startLogo div:nth-child(1){ /* startLogo내부에 있는 첫번째 div*/
+  background-color: #413730;
+  color: #ffea35;
+  width: 100px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /*가운데정렬 */ 
+  border-radius: 50px; /*모서리를 둥글게 처리 */
+
+}
+.startLogo div:nth-child(2){ /* startLogo내부에 있는 두번째 div*/
+  margin-top: -15px; /*위쪽으로 조금 올려준다*/
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.startButton{
+  font-size: 17px;
+  font-weight: 700; 
+  margin-top: 20px;
+}
+
+.questionLayout{
   display: flex;
   flex-direction: column;
+  background-color: #bacee0;
+  width: 100%; /*카톡느낌이 나도록 100%로 채우게 하는데 최대너비를 지정함*/
+  max-width: 900px; 
+  height: 100%;
+  overflow: hidden; /*전체화면에서 스크롤 안생기도록 */
+
+}
+.mbtiTitle{
+  display: flex;
+  flex-direction: row; /*왼쪼에서 오른쪽으로 */
+  width: 100%; /*카톡느낌이 나도록 100%로 채우게 하는데 최대너비를 지정함*/
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 15px;
+  box-sizing: border-box;
+  font-weight: 700;
 }
 
-.App-link {
-  color: #61dafb;
+.mbtiTitle div:nth-child(1){
+  display: flex;
+  flex : 1; /* 빈공강 가득 채우도록 */
+}
+.questList{
+  flex-direction: column;
+  height: 100%;
+  overflow: scroll; /*전체화면에서 스크롤 안생기도록 */
+  scrollbar-width: none; /*스크롤바숨기기*/
+}
+.questList::-webkit-scrollbar{
+  display: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.questionItemLayout{
+  display: flex;
+  flex : 1; /* 빈공강 가득 채우도록 */
+  margin : 10px 15px 5px 15px;
+}
+.answerItemLayout{  
+  width: 100%;
+  background-color: #fff;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.profileImg{
+  display: flex;
+  flex-direction: column;
+  width: 40px;
+  height: 40px;
+  background-color: #a1b6e9;
+  border-radius: 15px; /*모서리를 둥글게 처리 */
+  margin-right: 5px;
+  align-items: center;
+  justify-content: center; /*가운데정렬 */ 
+}
+
+.profileImg div:nth-child(1){
+  background-color: #cbd6f2;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+}
+.profileImg div:nth-child(2){
+  background-color: #cbd6f2;
+  width: 16px;
+  height: 8px;
+  border-radius: 8px 8px 0px 0px; 
+  margin-top: 2px;
+}
+
+
+.chatListLayout{
+  display: flex;
+  flex-direction: column;
+}
+.chatBox{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  max-width: 60vw; /*최대 너비를 지정해서 넘어가지 않도록*/
+  margin: 3px 0px 12px 0px;
+}
+
+
+.chatBox div:nth-child(1){
+  color: #fff;
+  font-size: 12px;
+  margin-top: 8px;
+
+}
+.chatBox div:nth-child(2){
+  padding: 7px 10px 7px 10px; 
+  background-color: #fff;
+  margin-left: -4px;
+  border-radius: 10px;
+  text-align: left;
+
+}
+.aCheatbox{
+  display: flex;
+  width: 100%;
+  color: #969696;
+  font-size: 22px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 25px;
+}
+
+.aCheatbox div:nth-child(1){
+  display: flex;
+  flex : 1;
+  padding: 10px; 
+  box-sizing: border-box;
+}
+
+.aCheatbox div:nth-child(2){
+  padding: 10px; 
+
+}
+.answerBox{
+  display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100px;
+   text-align: center;
+   box-shadow: 2px 2px 0px #ededed;
+   border : 1px solid #ededed;
+   margin : 0px 20px 15px 20px;
+   border-radius: 10px;
 }
